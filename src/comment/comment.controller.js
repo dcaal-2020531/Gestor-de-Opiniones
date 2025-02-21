@@ -34,7 +34,7 @@ export const updateComments = async (req, res) => {
             return res.status(404).send({ message: 'Comment not found' });
         }
 
-        const updateComment = await Product.findByIdAndUpdate(commentId, updates, { new: true });
+        const updateComment = await Comment.findByIdAndUpdate(commentId, updates, { new: true });
 
         return res.send({ message: 'Comentary updated successfully', updateComment });
     } catch (err) {
@@ -43,7 +43,7 @@ export const updateComments = async (req, res) => {
     }
 }
 
-export const deleteProduct = async (req, res) => {
+export const deleteComment = async (req, res) => {
     try {
         const { commentId } = req.params;
 

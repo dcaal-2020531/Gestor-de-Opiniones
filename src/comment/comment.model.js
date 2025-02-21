@@ -13,6 +13,10 @@ const commentSchema = Schema(
             type: String,
             required: [true, 'Text is required'],
             maxLength: [100, `Can't be overcome 100 characters`],
+        },
+        post:{
+            type: Schema.Types.ObjectId,
+            ref: 'Post'
         }
 
     }

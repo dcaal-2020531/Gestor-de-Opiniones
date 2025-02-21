@@ -2,9 +2,9 @@ import {model, Schema } from "mongoose";
 
 const postSchema = Schema(
     {
-        name: {
+        title: {
             type: String,
-            required: [true, 'Name is required'],
+            required: [true, 'Title is required'],
         },
         category: {
             type: Schema.Types.ObjectId,
@@ -15,9 +15,10 @@ const postSchema = Schema(
             required: [true, 'Text  is required'],
             maxLength: [300, `Can't be overcome 300 characters`],
         },
-        comment:{
+        user:{
             type: Schema.Types.ObjectId,
-            ref: 'Comment'
+            ref: 'User',
+            required: [true,'User is Required']
         }
     }
 )
